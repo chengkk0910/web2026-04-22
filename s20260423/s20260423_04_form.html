@@ -5,64 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        fieldset{
+            width: 60%;
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+            color: lightblue;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>FORM表單練習</h1>
     <form action="">
-        <p>
-            <!-- for -> id -->
-            <!-- id 唯一 -->
-            <!-- text -->
-            <label for="name">姓名</label>
-            <input type="text" name="" id="name" value="" placeholder="請輸入姓名">
-        </p>
-        <p>
-            <label for="count">數字</label>
-            <input type="number" name="" id="count" min="0" max="100">
-        </p>
-        <!-- 單選 radio -->
-        <!-- name 長一樣 -->
-        <p>
-            <label for="gender">性別</label>
-            <input type="radio" name="gender" value="男">男
-            <input type="radio" name="gender" value="女">女
-            <input type="radio" name="gender" value="保密">保密
-        </p>
-        <!-- 多選 checkbox -->
-        <!-- 多選的name 送到後端 [] 陣列 -->
-        <p>
-            <label for="">請選擇你的交通工具</label> <br>
-            <input type="checkbox" id="vehicle1" name="vehicle[]" value="Bike">
-            <label for="vehicle1"> I have a bike</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle[]" value="Car">
-            <label for="vehicle2"> I have a car</label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle[]" value="Boat">
-            <label for="vehicle3"> I have a boat</label>
-        </p>
+        <fieldset>
+            <legend>hr資料表單 ---- hello 你好嗎 衷心感謝 期待再相逢</legend>
+            <p>
+                <!-- for -> id -->
+                <!-- id 唯一 -->
+                <!-- text -->
+                <label for="name">姓名</label>
+                <input type="text" name="" id="name" value="" placeholder="請輸入姓名">
+            </p>
+            <p>
+                <label for="count">數字</label>
+                <input type="number" name="" id="count" min="0" max="100">
+            </p>
+            <!-- 單選 radio -->
+            <!-- name 長一樣 -->
+            <p>
+                <label for="gender">性別</label>
+                <input type="radio" name="gender" value="男">男
+                <input type="radio" name="gender" value="女">女
+                <input type="radio" name="gender" value="保密">保密
+            </p>
+            <!-- 多選 checkbox -->
+            <!-- 多選的name 送到後端 [] 陣列 -->
+            <p>
+                <label for="">請選擇你的交通工具</label> <br>
+                <input type="checkbox" id="vehicle1" name="vehicle[]" value="Bike">
+                <label for="vehicle1"> I have a bike</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle[]" value="Car">
+                <label for="vehicle2"> I have a car</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle[]" value="Boat">
+                <label for="vehicle3"> I have a boat</label>
+            </p>
 
-        <p>
-            <!-- input date -->
-            <label for="date">日期</label>
-            <input type="date" name="" id="date">
-        </p>
+            <p>
+                <!-- input date -->
+                <label for="date">日期</label>
+                <input type="date" name="" id="date">
+            </p>
 
-        <p>
-            <!-- file -->
-             <!-- <label for="">上傳檔案</label> -->
-            <input type="file" name="" id="">
-        </p>
+            <p>
+                <!-- file -->
+                <!-- <label for="">上傳檔案</label> -->
+                <input type="file" name="" id="">
+            </p>
 
-        <p>
-            <!-- 留言板 -->
-            <label for="murmur">備註</label> <br>
-            <textarea name="" id="murmur" rows="4" cols="50">
+            <p>
+                <!-- 留言板 -->
+                <label for="murmur">備註</label> <br>
+                <textarea name="" id="murmur" rows="4" cols="50">
 
             </textarea>
-        </p>
+            </p>
 
-        <p>
-            <input type="submit" value="送出">
-        </p>
+            <p>
+                <input type="submit" value="送出">
+            </p>
+        </fieldset>
+
     </form>
 </body>
 
