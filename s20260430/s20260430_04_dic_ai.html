@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Search</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        iframe {
+            width: 100%;
+            height: 45vh;
+            border: 5px solid black;
+        }
+
+        table {
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="searchForm">
+        <input type="text" id="wordInput" placeholder="輸入單字，例如: book">
+        <input type="submit" value="search">
+    </form>
+
+    <br><br><br>
+
+    <table>
+        <tr>
+            <td width="100%">
+                <iframe id="dictFrame1" src="https://www.merriam-webster.com/dictionary/apple" frameborder="0"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table>
+        <tr>
+            <td width="100%">
+                <iframe id="dictFrame2" src="https://zh.wiktionary.org/wiki/apple" frameborder="0"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // 抓取 HTML 元素
+        const searchForm = document.getElementById('searchForm');
+        const wordInput = document.getElementById('wordInput');
+        const dictFrame1 = document.getElementById('dictFrame1');
+        const dictFrame2 = document.getElementById('dictFrame2');
+
+        // 監聽表單提交事件
+        searchForm.addEventListener('submit', function (event) {
+            // 阻止表單預設的跳轉行為
+            event.preventDefault();
+
+            // 取得使用者輸入的內容
+            const word = wordInput.value.trim();
+
+            if (word !== "") {
+                // 修改第一個 iframe 的 src (Merriam-Webster)
+                dictFrame1.src = `https://www.merriam-webster.com/dictionary/${word}`;
+
+                // 修改第二個 iframe 的 src (Wiktionary)
+                dictFrame2.src = `https://zh.wiktionary.org/wiki/${word}`;
+            } else {
+                alert("請輸入單字！");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
