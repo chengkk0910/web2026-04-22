@@ -10,9 +10,15 @@
             color: #ccc;
         }
 
+        /* > 後代第一層 */
         .s1>div {
             color: green;
         }
+
+        /* 空格 後代全部 少用 */
+        /* .s1 div {
+            color: green;
+        } */
 
         .s2>div {
             color: blue;
@@ -30,6 +36,12 @@
         劉備
         <div class="s11">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉封
+            <div class="s111">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉封111
+            </div>
+            <div class="s112">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉封112
+            </div>
         </div>
         <div class="s12">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉禪
