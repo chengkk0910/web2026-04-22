@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
 <style>
+    table{
+        width: 80%;
+        margin: auto;
+    }
     table,
     th,
     td {
         border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;;
+    }
+
+    tr {
+        height: 6vh;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ccc;
+
+    }
+
+    th {
+        background-color: lightblue;
+    }
+    h2 , p {
+        text-align: center;
     }
 </style>
 
@@ -12,7 +34,7 @@
 
     <h2>A basic HTML table</h2>
 
-    <table style="width:100%">
+    <table>
         <tr>
             <th>Company</th>
             <th>Contact</th>
