@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 最簡單 class 寫在.box */
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin:auto;
+        }
+        
+        /* 但偶爾還是會看到有的人寫 attr selector */
+        /* attr box開頭 */
+        [class ^='box post'] {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box post1">
+        <h3>Hello Box1</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perspiciatis vitae illo beatae
+            voluptatum? Quam tenetur rerum illum error harum!
+        </p>
+    </div>
+
+    <div class="box post2">
+        <h3>Hello Box2</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perspiciatis vitae illo beatae
+            voluptatum? Quam tenetur rerum illum error harum!
+        </p>
+    </div>
+
+    <div class="box post3">
+        <h3>Hello Box3</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perspiciatis vitae illo beatae
+            voluptatum? Quam tenetur rerum illum error harum!
+        </p>
+    </div>
+</body>
+
+</html>
