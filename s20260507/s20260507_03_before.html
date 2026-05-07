@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <style>
-    table{
+    table {
         width: 80%;
         margin: auto;
     }
+
     table,
     th,
     td {
         border: 3px solid white;
         border-collapse: collapse;
-        text-align: center;;
+        text-align: center;
+        ;
     }
 
     tr {
@@ -22,11 +24,27 @@
 
     }
 
+
+
+    h2,
+    p {
+        text-align: center;
+    }
+
+    .price {
+        background-color: lightpink;
+    }
+
+    .price::before {
+        content: '$ ';
+    }
+
+    .price::after {
+        content: ' NT.';
+    }
+
     th {
         background-color: lightblue;
-    }
-    h2 , p {
-        text-align: center;
     }
 </style>
 
@@ -39,57 +57,57 @@
             <th width="30%">Company</th>
             <th width="30%">Contact</th>
             <th>Country</th>
+            <th>Price</th>
         </tr>
         <tr>
             <td>Alfreds Futterkiste</td>
             <td>Maria Anders</td>
             <td>Germany</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Centro comercial Moctezuma</td>
             <td>Francisco Chang</td>
             <td>Mexico</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Alfreds Futterkiste</td>
             <td>Maria Anders</td>
             <td>Germany</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Centro comercial Moctezuma</td>
             <td>Francisco Chang</td>
             <td>Mexico</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Alfreds Futterkiste</td>
             <td>Maria Anders</td>
             <td>Germany</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Centro comercial Moctezuma</td>
             <td>Francisco Chang</td>
             <td>Mexico</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Alfreds Futterkiste</td>
             <td>Maria Anders</td>
             <td>Germany</td>
+            <td class="price">100</td>
         </tr>
         <tr>
             <td>Centro comercial Moctezuma</td>
             <td>Francisco Chang</td>
             <td>Mexico</td>
+            <td class="price">100</td>
         </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-        </tr>
+
     </table>
 
     <p>To understand the example better, we have added borders to the table.</p>
