@@ -11,7 +11,7 @@
         }
 
         .box {
-            width: 300px;
+            width: 100%;
             height: 100vh;
             background-color: lightblue;
             padding-top: 20px;
@@ -20,21 +20,47 @@
 
         a {
             display: inline-block;
-            width: 150px;
+            width: 80%;
             height: 150px;
             background-color: lightpink;
             margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin: auto;
+        }
+
+
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            background-color: lightyellow;
         }
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <a href="">linkA</a>
-        <a href="">linkB</a>
-        <a href="">linkC</a>
-        <a href="">linkD</a>
-    </div>
+    <table>
+        <tr>
+            <td width="20%">
+                <div class="box">
+                    <a href="">linkA</a>
+                    <a href="">linkB</a>
+                    <a href="">linkC</a>
+                    <a href="">linkD</a>
+                </div>
+            </td>
+            <td width="80%">
+                <div class="main">
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
 </body>
 
 </html>
