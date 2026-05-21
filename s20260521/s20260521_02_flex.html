@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-row {
+            width: 80%;
+            height: 50vh;
+            background-color: lightblue;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container-column {
+            width: 30%;
+            height: 110vh;
+            background-color: lightblue;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            /* justify-content: space-around;
+            align-items: center; */
+        }
+
+        .item {
+            width: 300px;
+            height: 300px;
+            background-color: #ccc;
+            
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        flex row
+    </h2>
+    <div class="container-row">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <hr>
+    <h2>
+        flex column
+    </h2>
+    <div class="container-column">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>
