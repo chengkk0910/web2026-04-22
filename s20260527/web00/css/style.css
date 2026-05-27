@@ -12,6 +12,20 @@
     height: calc(768px - 65px - 20px);
     background-color: lightpink;
     margin: auto;
+
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.container-left {
+    width: 215px;
+    background-color: lightgreen;
+}
+
+.container-right {
+    width: calc(100% - 215px);
+    background-color: lightsalmon;
 }
 
 /* footer */
