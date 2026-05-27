@@ -1,16 +1,26 @@
+* {
+    box-sizing: border-box;
+    /* 內容 大於 表格 隱藏 */
+    overflow: hidden;
+}
+
 /* header */
+
 .header {
     width: 1024px;
     height: 65px;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     margin: auto;
+
+    border: 1px solid black;
+    border-bottom:  0px;
 }
 
 /* container */
 .container {
     width: 1024px;
     height: calc(768px - 65px - 20px);
-    background-color: lightpink;
+    /* background-color: lightpink; */
     margin: auto;
 
     display: flex;
@@ -20,7 +30,7 @@
 
 .container-left {
     width: 215px;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
 
     display: flex;
     flex-direction: column;
@@ -29,38 +39,53 @@
 }
 
 .container-right {
+    /* 記得 空格 -215px 錯的 - 215p才對 */
     width: calc(100% - 215px);
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
 }
 
 .left-top {
     width: 100%;
     height: calc(100% - 25px);
-    background-color: lightgray;
+    /* background-color: lightgray; */
+
+    border: 1px solid black;
+    border-right: 0px;
 }
 
 .left-bottom {
     width: 100%;
     height: 25px;
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
+    
+    border: 1px solid black;
+    border-right: 0px;
+    border-top: 0px;
 }
 
 .right-top {
     width: 100%;
     height: 29px;
-    background-color: lightsteelblue;
+    /* background-color: lightsteelblue; */
+    border: 1px solid black;
 }
 
 .right-bottom {
     width: 100%;
     height: calc(100% - 29px);
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
+    border: 1px solid black;
+    border-top: 0px;
 }
 
 /* footer */
 .footer {
     width: 1024px;
     height: 20px;
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
     margin: auto;
+    border: 1px solid black;
+
+    border-top: 0px;
+
 }
