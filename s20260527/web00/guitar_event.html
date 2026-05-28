@@ -8,6 +8,7 @@
     <style>
         body {
             background-image: url('./images/0101.jpg');
+            height: 1500px;
         }
 
         header {
@@ -19,23 +20,56 @@
 
         .container {
             /* text-align: center; */
-        }
-
-        .container>p {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
             font-family: "標楷體";
             font-size: 16px;
-            color: #FF0000;
+        
         }
+
 
         img {
             width: 250px;
             height: 250px;
         }
 
-        nav,.container-date {
+        nav,
+        .container-date {
             display: flex;
             justify-content: space-around;
             align-items: center
+        }
+
+        .item-title {
+            width: 100%;
+            /* color:red; */
+        }
+
+        .item-date {
+            width: 70%;
+        }
+
+        .item-top {
+            width: 30%;
+            text-align: center;
+        }
+
+        #d1 {
+            color: #800000;
+        }
+        #d2 {
+            color: #0000FF;
+        }
+        #d3 {
+            color: #FF0000;
+        }
+        #d4 {
+            color: #00FF00;
+        }
+        #d5 {
+            color: #000000;
         }
     </style>
 </head>
@@ -66,51 +100,103 @@
     <br>
     <div class="container-date">
         <div class="item">
-            九月十六日
+            <a href="#d2">
+                九月十六日
+            </a>
         </div>
         <div class="item">
-            十月三十一日
+            <a href="#d3">
+                十月三十一日
+            </a>
+
         </div>
         <div class="item">
-            十二月二十五日
+            <a href="#d4">
+                十二月二十五日
+            </a>
         </div>
         <div class="item">
-            元月一日
+            <a href="#d5">
+                元月一日
+            </a>
         </div>
     </div>
 
     <div class="container">
-        <p>
-            吉他社社史：<br>
-            本社成立於76年7月15日，迄今五年有餘，<br>
-            初為一群愛好吉他的同學的聚會，後由王小明提議成立吉他社，<br>
-            起初成立時，也遭遇些許困難，但在眾多愛好吉他的同學共同努力下，<br>
-            終於成立吉他社，提供吉他愛好者一個相互交流的園地，<br>
-            王小明並被推舉為第一屆社長。<br>
-            五年多來參加多次全國性比賽，履有佳績，並與其他學校的吉他社皆有密切交流，<br>
-            在校內外不定時舉行吉他音樂會，皆有不錯的評價。<br>
-            未來，在吉他教學上，將朝多元化教學模式發展，並建立吉他社網站，<br>
-            提供更多吉他的教學，讓對吉他有興趣的朋友們，有一個更好的學習園地。<br>
-            <br>
-            社長資料：<br>
-            姓名：王小明<br>
-            出生年月日：民國73年10月8日生<br>
-            身高：172公分<br>
-            體重：60公斤<br>
-            星座：天秤座<br>
-            興趣：詩詞，音樂(特別是吉他)<br>
-            經歷：多次參予吉他演奏比賽(民歌比賽)多獲好評<br>
-            <br>
-            指導老師資料：<br>
-            姓名：陳小英<br>
-            出生年月日：民國57年10月22日<br>
-            身高：168公分<br>
-            體重：50公斤<br>
-            星座：天秤座<br>
-            興趣：古典吉他<br>
-            經歷：民歌餐廳駐唱歌手7年、詞曲創作、吉他教學5年。<br>
-        </p>
+        <div class="item-title" id="d1">
+            近期活動
+        </div>
+        <div class="item-date" id="d2">
+            日期：九月十六日<br>
+            活動主題：社員大會<br>
+            地點：吉他社教室<br>
+            主持人：王小明<br>
+            活動內容：<br>
+            1.入社歡迎茶會<br>
+            2.指導老師致詞<br>
+            3.社長致詞<br>
+            4.社規介紹以及教學內容之簡介<br>
+        </div>
+
+        <div class="item-top">
+            <a href="#">
+                TOP
+            </a>
+        </div>
+
+        <div class="item-date" id="d3">
+            日期：十月三十一日<br>
+            活動主題：校內吉他表演<br>
+            地點：學校大禮堂<br>
+            領隊：王小明社長<br>
+            表演內容：以吉他演奏演唱民歌，曲目如下<br>
+            1.海浬來的沙<br>
+            2.微風往事<br>
+            3.七月涼山<br>
+            4.明天會更好(大合唱)<br>
+        </div>
+
+        <div class="item-top">
+            <a href="#">
+                TOP
+            </a>
+        </div>
+
+        <div class="item-date" id="d4">
+            日期：十二月二十五日<br>
+            活動主題：校內吉他比賽<br>
+            地點：學校大禮堂<br>
+            主辦單位：教務處<br>
+            吉他比賽規則：<br>
+            1.凡我玉山高中之學生<br>
+            2.參賽內容可為民歌演唱以及任何純吉他演奏方式如：古典吉他、爵士吉他演奏<br>
+            3.參賽者必須自備樂器<br>
+        </div>
+
+        <div class="item-top">
+            <a href="#">
+                TOP
+            </a>
+        </div>
+
+        <div class="item-date" id="d5">
+            日期：元月一日<br>
+            活動主題：全國吉他(高中組)演奏比賽<br>
+            地點：台北市社教館<br>
+            主辦單位：教育部<br>
+            比賽規則：<br>
+            1.由學校推舉優秀同學參予<br>
+            2.除推舉參加外，其餘有興趣參賽的同學，請自行報名參加<br>
+            3.參賽規則請參考比賽細則<br>
+        </div>
+        <div class="item-top">
+            <a href="#">
+                TOP
+            </a>
+        </div>
     </div>
+
+
 </body>
 
 </html>
