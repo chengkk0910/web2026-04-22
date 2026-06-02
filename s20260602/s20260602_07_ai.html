@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <title>多個全螢幕 Container 動畫</title>
+    <style>
+        /* 💡 清除網頁預設邊距 */
+        body {
+            margin: 0;
+            padding: 0;
+            /* 這次不要用 overflow: hidden，因為我們有三個全螢幕，需要允許上下滾動 */
+            background-color: #f0f2f5;
+            font-family: sans-serif;
+        }
+
+        /* 💡 每個 Container 都是獨立的全螢幕區域 */
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            /* 關鍵：作為內部 .box 的定位基準點 */
+            overflow: hidden;
+            /* 防止方塊在移動時不小心爆出滾動條 */
+            border-bottom: 2px dashed #ccc;
+            /* 加上分隔線，方便辨識換頁了 */
+        }
+
+        /* 給三個 Container 分別換上不同的背景色，比較容易看出來 */
+        .container:nth-child(1) {
+            background-color: #e6f7ff;
+        }
+
+        .container:nth-child(2) {
+            background-color: #f6ffed;
+        }
+
+        .container:nth-child(3) {
+            background-color: #fff7e6;
+        }
+
+        /* 💡 提示文字樣式（選填，只是為了讓畫面更清楚） */
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #999;
+            font-size: 24px;
+            pointer-events: none;
+            /* 讓文字不會干擾滑鼠點擊 */
+        }
+
+        /* 💡 方塊的通用基礎樣式 */
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* 讓方塊可以相對於它的 container 自由移動 */
+        }
+
+        /* 💡 幫三個方塊設定不同的顏色與動畫速度 */
+        .box1 {
+            background-color: #1890ff;
+            /* 藍色方塊：4秒 順時針轉 */
+            animation: moveAround 4s linear infinite;
+        }
+
+        .box2 {
+            background-color: #52c41a;
+            /* 綠色方塊：6秒 慢速轉 */
+            animation: moveAround 6s linear infinite;
+        }
+
+        .box3 {
+            background-color: #fa8c16;
+            /* 橘色方塊：3秒 快速轉 */
+            animation: moveAround 3s linear infinite;
+        }
+
+        /* 💡 核心動畫：利用 transform 移動 */
+        @keyframes moveAround {
+
+            /* 1. 左上角（起點） */
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            /* 2. 右上角：移動到 Container 最右邊（扣掉方塊寬度 100px） */
+            25% {
+                transform: translate(calc(100vw - 100px), 0);
+            }
+
+            /* 3. 右下角：移動到 Container 最底（扣掉方塊高度 100px） */
+            50% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+            }
+
+            /* 4. 左下角：回到最左邊，維持最底 */
+            75% {
+                transform: translate(0, calc(100vh - 100px));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">Container 1 (往下滑還有喔)</div>
+        <div class="box box1"></div>
+    </div>
+
+    <div class="container">
+        <div class="title">Container 2</div>
+        <div class="box box2"></div>
+    </div>
+
+    <div class="container">
+        <div class="title">Container 3</div>
+        <div class="box box3"></div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- 
+增加三個container width 100% height 100vh,
+每個container內都可以
+box轉來轉去 
+ -->
