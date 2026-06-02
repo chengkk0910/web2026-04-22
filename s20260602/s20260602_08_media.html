@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        /* mobile first */
+        /* 1. 預設樣式：手機（螢幕寬度小於 768px） */
+        body {
+            background-color: pink;
+            /* 手機是粉紅色 */
+        }
+
+        /* 2. 平板樣式：螢幕寬度大於或等於 768px */
+        @media screen and (min-width: 768px) {
+            body {
+                background-color: lightgreen;
+                /* 平板是淺綠色 */
+            }
+        }
+
+        /* 3. 電腦樣式：螢幕寬度大於或等於 1024px */
+        @media screen and (min-width: 1024px) {
+            body {
+                background-color: lightblue;
+                /* 電腦是淺藍色 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>縮放瀏覽器視窗看看效果吧！</h1>
+    <p>目前設定的斷點（Breakpoints）為：</p>
+    <ul>
+        <li><strong>手機 (< 768px)：</strong>粉紅色 (pink)</li>
+        <li><strong>平板 (768px ~ 1023px)：</strong>淺綠色 (lightgreen)</li>
+        <li><strong>電腦 (>= 1024px)：</strong>淺藍色 (lightblue)</li>
+    </ul>
+
+</body>
+
+</html>
