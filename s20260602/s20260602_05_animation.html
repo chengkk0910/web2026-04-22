@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: myAnimation;
+            animation-duration: 3s;
+
+            /* ✨ 關鍵：讓動畫無限次重複播放 */
+            animation-iteration-count: infinite;
+            /* animation-iteration-count: 2; */
+        }
+
+        @keyframes myAnimation {
+
+            /* 1. 左上角（起點） */
+            0%,
+            100% {
+                transform: translate(0px, 0px);
+            }
+
+            /* 2. 右上角：往右移 300px */
+            25% {
+                transform: translate(1000px, 0px);
+            }
+
+            /* 3. 右下角：維持右邊，往下移 300px */
+            50% {
+                transform: translate(1000px, 500px);
+            }
+
+            /* 4. 左下角：回到左邊，維持下邊 */
+            75% {
+                transform: translate(0px, 500px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Animation</h1>
+
+    <div></div>
+
+    <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+
+</body>
+
+</html>

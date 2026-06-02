@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 💡 先把網頁預設的邊距清空，這樣方塊才能真正貼到最邊緣 */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* 防止滾動條出現 */
+            background-color: #f0f2f5;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+
+            /* 套用動畫：名稱 4秒 勻速 無限重複 */
+            animation: myAnimation 4s linear infinite;
+        }
+
+        @keyframes myAnimation {
+
+            /* 1. 左上角（起點） */
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            /* 2. 右上角：移動到螢幕最右邊（扣掉方塊寬度 100px） */
+            25% {
+                transform: translate(calc(100vw - 100px), 0);
+            }
+
+            /* 3. 右下角：維持最右邊，向下移動到螢幕最底（扣掉方塊高度 100px） */
+            50% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+            }
+
+            /* 4. 左下角：回到最左邊，維持最底 */
+            75% {
+                transform: translate(0, calc(100vh - 100px));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+
+</body>
+
+</html>
