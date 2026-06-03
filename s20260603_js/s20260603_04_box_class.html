@@ -65,9 +65,9 @@
     </div>
 
     <div class="container-input">
-        <div class="item item1 input-blue" id="blueBtn"></div>
-        <div class="item item2 input-green" id="greenBtn"></div>
-        <div class="item item3 input-red" id="redBtn"></div>
+        <div class="item item1 color-btn" id="blueBtn"></div>
+        <div class="item item2 color-btn" id="greenBtn"></div>
+        <div class="item item3 color-btn" id="redBtn" data-color="bg-red"></div>
     </div>0
 
     <script>
@@ -76,52 +76,40 @@
         let box = document.querySelector('.box');
 
         // 綁定 redBtn
-        // let redBtn = document.querySelector('#redBtn');
-        let inputRed = document.querySelector('.input-red');
+        let redBtn = document.querySelector('#redBtn');
+
+        // 綁定 colorBtn
+        let colorBtn = document.querySelector('.color-btn');
 
 
         // 綁定 blueBtn
-        let blueBtn = document.querySelector('#blueBtn');
-
         // 綁定 greenBtn
-        let greenBtn = document.querySelector('#greenBtn');
+        console.log('box', box);
+        console.log('redBtn', redBtn);
+        console.log('colorBtn', colorBtn);
 
 
-
-
-
-        // 類似php print_r
-        console.log("Hello JS");
-        console.log(box);
-        console.log(redBtn);
-        console.log(blueBtn);
-        console.log(greenBtn);
 
         // 2.action
-
         // 紅色按鈕 點一下
-        inputRed.addEventListener('click', function () {
-            console.log('redBtn ok');
-            // box 變紅色
-            box.setAttribute('class', 'box bg-red');
+        colorBtn.addEventListener('click', function () {
+            console.log('this', this);
+
+            // // box 變紅色
+            // let getColor = this.getAttribute('data-color');
+            // console.log('getColor', getColor);
+
+            // // $text = "box $getColor"
+            // let tmpText = `box ${getColor}`;
+            // console.log('tmpText', tmpText);
+
+            // box.setAttribute('class', tmpText);
+
+            // // box.setAttribute('class', 'box bg-red');
+
         });
 
 
-        // 藍色按鈕 點一下
-        // box 變藍色
-        blueBtn.addEventListener('click', function () {
-            console.log('blueBtn ok');
-            // box 變紅色
-            box.setAttribute('class', 'box bg-blue');
-        });
-
-        // 綠色按鈕 點一下
-        // box 變綠色
-        greenBtn.addEventListener('click', function () {
-            console.log('greenBtn ok');
-            // box 變紅色
-            box.setAttribute('class', 'box bg-green');
-        });
 
 
     </script>
