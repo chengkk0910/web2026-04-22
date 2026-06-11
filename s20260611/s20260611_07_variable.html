@@ -12,6 +12,7 @@
             background-color: lightblue;
             margin: auto;
         }
+
         .bg-pink {
             background-color: lightpink;
         }
@@ -29,15 +30,14 @@
         // var vs let vs 直接使用
         // var 少用 萬能key 全域變數
         // let 區域變數 只能在block內使用 
+        // const 常數 只能宣告一次 不能改變 也是區域變數 只能在block內使用
         // 直接使用 也是全域變數 建議不要用
         // 懶人包 只使用let
 
         let big = 100;
         console.log('big', big);
-        
-        if (true)
-        
-        {
+
+        if (true) {
             let a = 10;
             // let a = 10;
             a = 15;
@@ -46,7 +46,11 @@
             d = 10;
             console.log('a', a);
             console.log('big', big);
+
+            const myConst = 55688;
         }
+        // console.log('myConst', myConst);
+
         // console.log('b', b);
         // console.log('b', b);
         console.log('c', c);
