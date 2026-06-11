@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 25vh;
+            background-color: lightblue;
+            margin: auto;
+            margin-top: 20px;
+            text-align: center;
+            padding: 30px;
+        }
+        input{
+            width: 80%;
+        }
+        button{
+            width: 50%;
+            height: 50px;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div class="box input-box">
+        <p>
+            <input type="text" name="name" id="myName" placeholder="name?">
+        </p>
+        <p>
+            <input type="text" name="text" id="myText" placeholder="text?">
+        </p>
+        <p>
+            <button type="button" id="myBtn">myBtn</button>
+        </p>
+    </div>
+
+    <div class="box output-box">
+        <span id="mySpan">...</span>
+    </div>
+
+
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // jquery 寫code
+        $(document).ready(function () {
+
+            // 1.bind
+            const myBtn = $('#myBtn');
+            const myName = $('#myName');
+            const myText = $('#myText');
+            const mySpan = $('#mySpan');
+
+            console.log('myBtn', myBtn);
+            console.log('myName', myName);
+            console.log('myText', myText);
+            console.log('mySpan', mySpan);
+
+
+            // 2.action
+            myBtn.click(function (e) {
+                // e.preventDefault();
+                console.log('myBtn click ok');
+                // js .value
+                // jq .val()
+                // js .innerText
+                // jq .text()   
+                // js .innerHTML
+                // jq .html()
+
+                let getName = myName.val();
+                let getText = myText.val();
+                console.log('getName', getName);
+                console.log('getText', getText);
+                let tmpText = `${getName} => ${getText}`;
+                console.log('tmpText', tmpText);
+                mySpan.text(tmpText);
+
+
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
