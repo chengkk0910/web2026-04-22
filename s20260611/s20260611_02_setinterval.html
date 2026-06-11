@@ -44,6 +44,9 @@
         let myBtn = document.getElementById("myBtn");
         let box = document.querySelector(".box");
 
+        // flag
+        let isPink = false;
+
         console.log('myBtn', myBtn);
         console.log('box', box);
 
@@ -55,9 +58,15 @@
 
             // setTimeout(function,時間(毫秒) 時間到 執行function
             // function 在裡面 不用function name
-            setTimeout(function () {
-                box.setAttribute("class", "box bg-blue");
-            }, 2000);
+            setInterval(function () {
+                if (isPink) {
+                    box.setAttribute("class", "box bg-blue");
+                    isPink = false;
+                } else {
+                    box.setAttribute("class", "box bg-pink");
+                    isPink = true;
+                }
+            }, 1000);
         });
     </script>
 </body>
