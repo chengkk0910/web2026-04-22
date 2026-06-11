@@ -47,18 +47,35 @@
         // flag
         let isPink = false;
 
+        // timer
+        // setInterval() 暫存
+        let timer = null;
+
         console.log('myBtn', myBtn);
         console.log('box', box);
 
         // 2.action
         myBtn.addEventListener('click', function () {
+
+            // if timer is not null, stop timer 跳出
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+                console.log('timer 已存在');
+                return false;
+            }
+
+
             console.log('myBtn click ok');
 
             box.setAttribute("class", "box bg-pink");
+            // hidden
+            // myBtn.style.display = "none";
 
             // setTimeout(function,時間(毫秒) 時間到 執行function
             // function 在裡面 不用function name
-            setInterval(function () {
+            timer = setInterval(function () {
+                console.log('timer', timer);
                 if (isPink) {
                     box.setAttribute("class", "box bg-blue");
                     isPink = false;
@@ -66,7 +83,7 @@
                     box.setAttribute("class", "box bg-pink");
                     isPink = true;
                 }
-            }, 1000);
+            }, 300);
 
             // 小練習?
             // 1. 連續按下去 會一直新增 setInterval ?
