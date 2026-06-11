@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: auto;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+
+
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // jquery 寫code
+        $(document).ready(function () {
+            // 1.bind
+            // jquery object 才可以使用jquery method
+            // const boxJS = document.querySelector('.box');
+            // console.log('boxJS', boxJS);
+            const box = $('.box');
+            console.log('box', box);
+
+
+            // 2.action
+            box.click(function (e) {
+                // e.preventDefault();
+                console.log('box click ok');
+                box.attr('class', 'box bg-pink');
+
+            });
+
+
+        });
+
+        // $(function(){
+        //     // jquery 寫code
+        //     // jquery 寫code
+        // })
+    </script>
+</body>
+
+</html>
