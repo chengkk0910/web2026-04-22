@@ -60,9 +60,9 @@
 </head>
 
 <body>
-    <h3 class="text-center">複利計算 定期定額</h3>
+    <h3 class="text-center">複利計算 單筆</h3>
     <div class="box input-container">
-        <input type="text" name="money" id="money" value="9000" placeholder="每個月存多少錢?">
+        <input type="text" name="money" id="money" value="1000000" placeholder="單筆存多少錢?">
         <input type="text" name="rate" id="rate" value="10" placeholder="年利率%">
         <input type="text" name="year" id="year" value="40" placeholder="時間 年">
         <!-- <select name="opt" id="opt">
@@ -114,21 +114,18 @@
                 // 懶人包 所有input的數字 全部都要做Number() 轉型
                 let getMoney = Number(money.val());
                 let getRate = Number(rate.val());
+                let tmpRate = getRate / 100;
                 let getYear = Number(year.val());
 
 
                 let result = 0;
-                const r = (getRate / 100) / 12; // 年利率轉月利率
-                const n = getYear * 12;         // 年數轉總月數
-
-                // 一行流公式：money * [((1 + r)^n - 1) / r]
-                result = Math.round(getMoney * (((1 + r) ** n - 1) / r));
-
+                result = getMoney * Math.pow((1 + tmpRate), getYear);
+                let finalResult = Math.round(result);
 
 
                 console.log('result', result);
 
-                let tmpText = `每月${getMoney} 利率${getRate}% 共${getYear}年 = ${result}`
+                let tmpText = `單筆${getMoney} 利率${getRate}% 共${getYear}年 = ${finalResult}`
                 mySpan.text(tmpText);
 
 
