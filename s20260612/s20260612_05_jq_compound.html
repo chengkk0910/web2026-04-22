@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+
+        .input-container {
+            background-color: lightblue;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .output-container {
+            background-color: lightpink;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        input {
+            width: 80%;
+            height: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        select,
+        option {
+            text-align: center;
+            width: 80%;
+            height: 30px;
+            border-radius: 20px;
+        }
+
+        button {
+            width: 50%;
+            height: 30px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box input-container">
+        <input type="text" name="money" id="money" value="9000" placeholder="每個月存多少錢?">
+        <input type="text" name="rate" id="rate" value="10" placeholder="年利率%">
+        <input type="text" name="year" id="year" value="40" placeholder="時間 年">
+        <!-- <select name="opt" id="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select> -->
+        <button type="button" id="myBtn">submit</button>
+    </div>
+    <div class="box output-container">
+        <span id="mySpan">1 + 1 = 2</span>
+    </div>
+
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // jquery 寫code
+        $(document).ready(function () {
+            // 1.bind
+            const myBtn = $('#myBtn');
+            const money = $('#money');
+            const rate = $('#rate');
+            const year = $('#year');
+            const mySpan = $('#mySpan');
+
+            console.log('myBtn', myBtn);
+            console.log('money', money);
+            console.log('rate', rate);
+            console.log('year', year);
+            console.log('mySpan', mySpan);
+
+            // 2.action
+
+            // click submit
+            // get num1,num2,opt
+
+            // click submit
+            myBtn.click(function (e) {
+                // console.log('e', e);
+
+                // form submit 不要讓她送出
+                // e.preventDefault();
+
+                // get money,rate,year
+                // 懶人包 所有input的數字 全部都要做Number() 轉型
+                let getMoney = Number(money.val());
+                let getRate = Number(rate.val());
+                let getYear = Number(year.val());
+
+
+                let result = 0;
+                const r = (getRate / 100) / 12; // 年利率轉月利率
+                const n = getYear * 12;         // 年數轉總月數
+
+                // 一行流公式：money * [((1 + r)^n - 1) / r]
+                result = Math.round(getMoney * (((1 + r) ** n - 1) / r));
+
+
+
+                console.log('result', result);
+
+                let tmpText = `每月${getMoney} 利率${getRate}% 共${getYear}年 = ${result}`
+                mySpan.text(tmpText);
+
+
+
+
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
