@@ -39,6 +39,14 @@
             text-align: center;
         }
 
+        select,
+        option {
+            text-align: center;
+            width: 80%;
+            height: 30px;
+            border-radius: 20px;
+        }
+
         button {
             width: 50%;
             height: 30px;
@@ -51,7 +59,13 @@
     <div class="box input-container">
         <input type="text" name="num1" id="num1" value="200" placeholder="num1?">
         <input type="text" name="num2" id="num2" value="100" placeholder="num2?">
-        <input type="text" name="opt" id="opt" value="+" placeholder="opt?">
+        <!-- <input type="text" name="opt" id="opt" value="+" placeholder="opt?"> -->
+        <select name="opt" id="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
         <button type="button" id="myBtn">submit</button>
     </div>
     <div class="box output-container">
@@ -112,26 +126,43 @@
                 // 1.opt 改用select
                 // 2.if else 改成 switch case
 
-                if (getOpt == "+") {
-                    result = getNum1 + getNum2;
-                } else if (getOpt == "-") {
-                    result = getNum1 - getNum2;
-                } else if (getOpt == "*") {
-                    result = getNum1 * getNum2;
-                } else if (getOpt == "/") {
-                    result = getNum1 / getNum2;
-                } else {
-                    alert('opt 請輸入 + - * /');
+                switch (getOpt) {
+                    case "+":
+                        result = getNum1 + getNum2;
+                        break;
+                    case "-":
+                        result = getNum1 - getNum2;
+                        break;
+                    case "*":
+                        result = getNum1 * getNum2;
+                        break;
 
-                    // 重新reload 該頁面
-
-                    location.reload();
-                    // setTimeout(() => {
-                    //     location.reload();
-                    // }, 3000);
-
-                    return false;
+                    case "/":
+                        result = getNum1 / getNum2;
+                        break;
                 }
+
+
+                // if (getOpt == "+") {
+                //     result = getNum1 + getNum2;
+                // } else if (getOpt == "-") {
+                //     result = getNum1 - getNum2;
+                // } else if (getOpt == "*") {
+                //     result = getNum1 * getNum2;
+                // } else if (getOpt == "/") {
+                //     result = getNum1 / getNum2;
+                // } else {
+                //     alert('opt 請輸入 + - * /');
+
+                //     // 重新reload 該頁面
+
+                //     location.reload();
+                //     // setTimeout(() => {
+                //     //     location.reload();
+                //     // }, 3000);
+
+                //     return false;
+                // }
 
 
 
