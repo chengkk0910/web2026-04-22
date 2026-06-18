@@ -115,7 +115,7 @@
                 let getOpt = opt.val();
 
                 // js typeof() method
-                //  console.log('getNum1', getNum1);
+                // console.log('getNum1', getNum1);
                 // console.log('typeof getNum1', typeof (getNum1));
                 // console.log('getNum2', getNum2);
                 // console.log('typeof getNum2', typeof (getNum2));
@@ -180,6 +180,16 @@
 
             });
 
+
+            // opt change
+
+            
+            opt.change(function (e) { 
+                e.preventDefault();
+                console.log('opt change');
+                
+                
+            });
         });
     </script>
 
