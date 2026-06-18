@@ -28,6 +28,7 @@
             width: 80%;
             height: 40vh;
             margin: auto;
+            border-radius: 20px;
         }
 
         .box {
@@ -35,6 +36,8 @@
             height: 50%;
             background-color: lightblue;
             padding-top: 20px;
+            border-radius: 20px;
+            cursor: pointer;
         }
 
         .bg-blue {
@@ -78,11 +81,34 @@
     <script>
         // jquery 寫code
         $(document).ready(function () {
-            
+
             // 1.bind
+            const hideBtn = $('.hideBtn');
+            const showBtn = $('.showBtn');
+            const toggleBtn = $('.toggleBtn');
+            const outputContainer = $('.output-container');
 
             // 2.action
-            
+
+            // hideBtn click
+            hideBtn.click(function (e) {
+                // e.preventDefault();
+                outputContainer.hide();
+            });
+
+            // showBtn click
+            showBtn.click(function (e) {
+                // e.preventDefault();
+                outputContainer.show();
+            });
+
+            // toggleBtn click
+            toggleBtn.click(function (e) {
+                // e.preventDefault();
+                outputContainer.toggle();
+            });
+
+
         });
     </script>
 </body>
