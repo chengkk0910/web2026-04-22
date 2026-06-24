@@ -41,13 +41,13 @@
                 type: "get",
                 url: url,
                 // data: "data",
-                // dataType: "json",
+                dataType: "json",
                 success: function (res) {
                     console.log('res', res);
                     console.log('res typeof', typeof (res));
 
-                    mySpan.html(res); //js innerHtml html語法
-                    mySpan.text(res); //js innerText 字串
+                    // mySpan.html(res); //js innerHtml html語法
+                    // mySpan.text(res); //js innerText 字串
                 },
                 // 顯示錯誤
                 // error: function (xhr, status, error) {
