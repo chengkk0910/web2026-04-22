@@ -59,32 +59,36 @@
                 console.log('myForm submit ok');
                 console.log('this', this);
                 console.log('$(this)', $(this));
+                // jquery get form data
+                // 2. data = form data
                 let data = $(this).serialize();
                 console.log('data', data);
 
 
-                // jquery get form data
+                // 3. ajax to php
+                let url = './s20260625_01_calc_data.php';
+                $.ajax({
+                    type: "get",
+                    url: url,
+                    data: data,
+                    dataType: "json",
+                    success: function (res) {
+                        console.log('res', res);
+                        console.log('res typeof', typeof (res));
+
+
+                    }
+                });
+                // 3. ajax to php end
 
             });
-            // 2. data = form data
-            // 3. ajax to php
+
+
             // 4. get res
             // 5. res show output
 
 
-            let url = './s20260625_01_calc_data.php';
-            $.ajax({
-                type: "get",
-                url: url,
-                // data: "data",
-                dataType: "json",
-                success: function (res) {
-                    console.log('res', res);
-                    console.log('res typeof', typeof (res));
 
-
-                }
-            });
 
         });
     </script>

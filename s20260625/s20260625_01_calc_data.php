@@ -18,6 +18,7 @@ $input = $_GET;
 // ];
 
 $data = $input;
+// echo json_encode($data);
 
 $num1 = $data['num1'] ?? 1000;
 $num2 = $data['num2'] ?? 500;
