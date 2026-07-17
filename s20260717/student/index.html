@@ -76,21 +76,36 @@
                     <td class="text-center">1</td>
                     <td class="text-center">Amy</td>
                     <td>
-                        <a href="./edit.html?id=1">修改</a> &nbsp;&nbsp;<a href="./del.html?id=1">刪除</a>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            修改
+                        </button>
+                        <!-- <a href="./edit.html?id=1">修改</a> &nbsp;&nbsp; -->
+                        <a href="./del.html?id=1" class="btn btn-danger">刪除</a>
                     </td>
                 </tr>
                 <tr>
                     <td class="text-center">2</td>
                     <td class="text-center">Bob</td>
                     <td>
-                        <a href="./edit.html?id=2">修改</a> &nbsp;&nbsp;<a href="./del.html?id=1">刪除</a>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            修改
+                        </button>
+                        <!-- <a href="./edit.html?id=1">修改</a> &nbsp;&nbsp; -->
+                         <a href="./del.html?id=2" class="btn btn-danger">刪除</a>
                     </td>
                 </tr>
                 <tr>
                     <td class="text-center">3</td>
                     <td class="text-center">Cat</td>
                     <td>
-                        <a href="./edit.html?id=3">修改</a> &nbsp;&nbsp;<a href="./del.html?id=1">刪除</a>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#myModalEdit">
+                            修改
+                        </button>
+                        <!-- <a href="./edit.html?id=1">修改</a> &nbsp;&nbsp; -->
+                        <a href="./del.html?id=3" class="btn btn-danger">刪除</a>
                     </td>
                 </tr>
 
@@ -99,7 +114,7 @@
     </div>
 
 
-    <!-- The Modal -->
+    <!-- The 新增 Modal -->
     <div class="modal" id="myModal">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -119,6 +134,42 @@
                             <label for="name">Name:</label>
                             <input type="name" class="form-control" id="name" placeholder="Enter Name" name="name">
                         </div>
+                        <!-- </div> -->
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The 修改 Modal -->
+    <div class="modal" id="myModalEdit">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <form action="./update.html">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2>Student Edit form 修改</h2>
+                        <!-- <h4 class="modal-title">Modal Heading</h4> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <!-- <div class="container mt-3"> -->
+                            <div class="mb-3 mt-3">
+                                <label for="name">Name:</label>
+                                <input type="name" class="form-control" id="name" placeholder="Enter Name" name="name"
+                                    value="editName">
+                            </div>
                         <!-- </div> -->
                     </div>
 
