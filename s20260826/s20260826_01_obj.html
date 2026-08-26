@@ -10,7 +10,24 @@
 </head>
 
 <body>
-
+    <div class="container mt-3">
+        <h2>Bordered Table</h2>
+        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+            </thead>
+            <tbody id="myTbody">
+                <!-- <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
 
 
     <!-- jquery  -->
@@ -21,6 +38,12 @@
     <script>
         // jquery 寫code
         $(document).ready(function () {
+
+            // 1.bind
+            const myTbody = $('#myTbody');
+            console.log('myTbody', myTbody);
+
+            // 2.action
 
             let myObj = {
                 'id': '1',
@@ -43,6 +66,10 @@
                 {
                     'id': '3',
                     'name': 'cat'
+                },
+                {
+                    'id': '4',
+                    'name': 'dog'
                 }
             ];
 
@@ -50,17 +77,27 @@
 
 
             // jquery each 
-            // $.each(data, function (key, value) {
-            //     console.log('key', key);
-            //     console.log('value', value);
 
-            // });
+            let tempText = ``;
+            $.each(data, function (key, value) {
+                console.log('key', key);
+                console.log('value', value);
+                tempText += `
+                    <tr>
+                        <td>${value.id}</td>
+                        <td>${value.name}</td>
+                    </tr>
+                `;
+            });
+
+            // append
+            myTbody.append(tempText);
 
             // js foreach
-            data.forEach((value) => {
-                console.log(value);
+            // data.forEach((value) => {
+            //     console.log(value);
 
-            });
+            // });
 
 
 
