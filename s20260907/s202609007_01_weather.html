@@ -16,26 +16,21 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th width="7%">序號</th>
+                    <th width="10%">縣市</th>
+                    <th>12</th>
+                    <th>24</th>
+                    <th>36</th>
+
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTbody">
                 <tr>
                     <td>John</td>
                     <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
+                    <th>24-30 &deg;C</th>
+                    <th>24-30 &deg;C</th>
+                    <th>24-30 &deg;C</th>
                 </tr>
             </tbody>
         </table>
@@ -51,6 +46,11 @@
         // jquery 寫code
         $(document).ready(function () {
 
+            // 1.bind
+            const myTbody = $('#myTbody');
+
+            // 2.action
+
             let url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-3FF02223-905D-4408-AD35-791E18899902`;
 
             $.ajax({
@@ -60,7 +60,28 @@
                 dataType: "json",
                 success: function (res) {
                     console.log('res', res);
+                    data = res.records.location;
+                    // data = res.records.location[0].locationName;
+                    console.log('data', data);
+                    let tmpText = ``;
+                    $.each(data, function (key, value) {
+                        console.log('key', key);
+                        console.log('value', value);
 
+                        
+                        tmpText += `
+                            <tr>
+                                <td>${key + 1}</td>
+                                <td>${value.locationName}</td>
+                                <th>24-30 &deg;C</th>
+                                <th>24-30 &deg;C</th>
+                                <th>24-30 &deg;C</th>
+                            </tr>
+                        `;
+                    });
+
+                    // append
+                    myTbody.append(tmpText);
                 }
             });
 
