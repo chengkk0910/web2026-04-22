@@ -18,9 +18,9 @@
                 <tr>
                     <th width="7%">序號</th>
                     <th width="10%">縣市</th>
-                    <th>12</th>
-                    <th>24</th>
-                    <th>36</th>
+                    <th>時段一 12</th>
+                    <th>時段二 24</th>
+                    <th>時段三 36</th>
 
                 </tr>
             </thead>
@@ -64,18 +64,28 @@
                     // data = res.records.location[0].locationName;
                     console.log('data', data);
                     let tmpText = ``;
+
+
+
                     $.each(data, function (key, value) {
                         console.log('key', key);
                         console.log('value', value);
+                        let time1Min = value.weatherElement[2].time[0].parameter.parameterName;
+                        let time2Min = value.weatherElement[2].time[1].parameter.parameterName;
+                        let time3Min = value.weatherElement[2].time[2].parameter.parameterName;
+                        let time1Max = value.weatherElement[4].time[0].parameter.parameterName;
+                        let time2Max = value.weatherElement[4].time[1].parameter.parameterName;
+                        let time3Max = value.weatherElement[4].time[2].parameter.parameterName;
+                        console.log('time1Min', time1Min);
+                        console.log('time1Max', time1Max);
 
-                        
                         tmpText += `
                             <tr>
                                 <td>${key + 1}</td>
                                 <td>${value.locationName}</td>
-                                <th>24-30 &deg;C</th>
-                                <th>24-30 &deg;C</th>
-                                <th>24-30 &deg;C</th>
+                                <th>${time1Min}-${time1Max} &deg;C</th>
+                                <th>${time2Min}-${time2Max} &deg;C</th>
+                                <th>${time3Min}-${time3Max} &deg;C</th>
                             </tr>
                         `;
                     });
