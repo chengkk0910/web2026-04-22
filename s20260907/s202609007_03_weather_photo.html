@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2>Bordered Table</h2>
+        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="7%">序號</th>
+                    <th width="10%">縣市</th>
+                    <th>時段一 12</th>
+                    <th>時段二 24</th>
+                    <th>時段三 36</th>
+
+                </tr>
+            </thead>
+            <tbody id="myTbody">
+                <!-- <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <th>24-30 &deg;C <img src="./images/day/1.svg" alt=""></th>
+                    <th>24-30 &deg;C</th>
+                    <th>24-30 &deg;C</th>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // jquery 寫code
+        $(document).ready(function () {
+
+            // 1.bind
+            const myTbody = $('#myTbody');
+
+            // 2.action
+
+            let url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-3FF02223-905D-4408-AD35-791E18899902`;
+
+            $.ajax({
+                type: "get",
+                url: url,
+                // data: "data",
+                dataType: "json",
+                success: function (res) {
+                    console.log('res', res);
+                    data = res.records.location;
+                    // data = res.records.location[0].locationName;
+                    console.log('data', data);
+                    let tmpText = ``;
+
+
+
+                    $.each(data, function (key, value) {
+                        console.log('key', key);
+                        console.log('value', value);
+
+                        // 最低溫度 最高溫度
+                        let time1Min = value.weatherElement[2].time[0].parameter.parameterName;
+                        let time2Min = value.weatherElement[2].time[1].parameter.parameterName;
+                        let time3Min = value.weatherElement[2].time[2].parameter.parameterName;
+                        let time1Max = value.weatherElement[4].time[0].parameter.parameterName;
+                        let time2Max = value.weatherElement[4].time[1].parameter.parameterName;
+                        let time3Max = value.weatherElement[4].time[2].parameter.parameterName;
+
+                        // wx
+                        let time1Wx = value.weatherElement[0].time[0].parameter.parameterName;
+                        let time2Wx = value.weatherElement[0].time[1].parameter.parameterName;
+                        let time3Wx = value.weatherElement[0].time[2].parameter.parameterName;
+
+                        // wxValue
+                        let time1WxValue = value.weatherElement[0].time[0].parameter.parameterValue;
+                        let time2WxValue = value.weatherElement[0].time[1].parameter.parameterValue;
+                        let time3WxValue = value.weatherElement[0].time[2].parameter.parameterValue;
+
+
+                        console.log('time1Min', time1Min);
+                        console.log('time1Max', time1Max);
+                        console.log('time1Wx', time1Wx);
+                        console.log('time3WxValue', time3WxValue);
+
+                        tmpText += `
+                            <tr>
+                                <td>${key + 1}</td>
+                                <td>${value.locationName}</td>
+                                <td>${time1Min}-${time1Max} &deg;C <img src="./images/day/${time1WxValue}.svg" alt=""> &nbsp;${time1Wx}</td>
+                                <td>${time2Min}-${time2Max} &deg;C <img src="./images/day/${time2WxValue}.svg" alt=""> &nbsp;${time2Wx}</td>
+                                <td>${time3Min}-${time3Max} &deg;C <img src="./images/day/${time3WxValue}.svg" alt=""> &nbsp;${time3Wx}</td>
+                            </tr>
+                        `;
+                    });
+
+                    // append
+                    myTbody.append(tmpText);
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
