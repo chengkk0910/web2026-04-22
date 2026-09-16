@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "word": "analyze",
+        "meaning": "分析",
+        "pronunciation": "/ˈæn.əl.aɪz/",
+        "sentence": "Researchers need to analyze the data before drawing any conclusions."
+    },
+    {
+        "id": 2,
+        "word": "approach",
+        "meaning": "方法；接近",
+        "pronunciation": "/əˈproʊtʃ/",
+        "sentence": "The government is taking a new approach to solve the economic crisis."
+    },
+    {
+        "id": 3,
+        "word": "area",
+        "meaning": "領域；區域",
+        "pronunciation": "/ˈer.i.ə/",
+        "sentence": "She is a leading expert in the area of artificial intelligence."
+    },
+    {
+        "id": 4,
+        "word": "assess",
+        "meaning": "評估；估價",
+        "pronunciation": "/əˈses/",
+        "sentence": "The teacher will assess the students' performance through a final project."
+    },
+    {
+        "id": 5,
+        "word": "assume",
+        "meaning": "假設；承擔",
+        "pronunciation": "/əˈsuːm/",
+        "sentence": "It is unwise to assume that all the information online is accurate."
+    },
+    {
+        "id": 6,
+        "word": "authority",
+        "meaning": "權威；當局",
+        "pronunciation": "/əˈθɔːr.ə.t̬i/",
+        "sentence": "The local health authority issued a warning about the flu outbreak."
+    },
+    {
+        "id": 7,
+        "word": "available",
+        "meaning": "可獲得的；有空的",
+        "pronunciation": "/əˈveɪ.lə.bəl/",
+        "sentence": "Further information is available on the university website."
+    },
+    {
+        "id": 8,
+        "word": "benefit",
+        "meaning": "利益；好處",
+        "pronunciation": "/ˈben.ə.fɪt/",
+        "sentence": "Regular exercise brings many physical and mental health benefits."
+    },
+    {
+        "id": 9,
+        "word": "concept",
+        "meaning": "概念",
+        "pronunciation": "/ˈkɑːn.sept/",
+        "sentence": "The student struggled to understand the basic concepts of quantum physics."
+    },
+    {
+        "id": 10,
+        "word": "consist",
+        "meaning": "由……組成",
+        "pronunciation": "/kənˈsɪst/",
+        "sentence": "The examination consists of a written test and an oral interview."
+    }
+]
